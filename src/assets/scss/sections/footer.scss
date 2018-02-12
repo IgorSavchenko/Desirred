@@ -1,0 +1,188 @@
+.footer {
+  padding: 0 15px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include tablet-min {
+    padding-top: 40px;
+  }
+  @include tablet-landscape-min {
+    justify-content: space-between;
+  }
+  & .about, & .services, & .stores {
+    width: 100%;
+    // margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @include tablet-min {
+      width: inherit;
+    }
+    @include tablet-landscape-min {
+      width: inherit;
+    }
+    &:not(:nth-of-type(3)) {
+      margin-right: 25px;
+      @include tablet-min {
+        margin-right: 60px;
+      }
+    }
+    &__title {
+      font-size: 1rem;//16px
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 34px;
+      margin-top: 34px;
+    }
+    &__list {
+      @include resetListStyles;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &__item {
+      line-height: 1.75;//28px
+    }
+    &__link {
+      @include resetLinkStyles;
+      position: relative;
+      border-bottom: 1px solid rgba($color-custom, 0);
+      transition: border-color 0.35s, padding 0.35s;
+      padding-bottom: 5px;
+      &:hover:not([role="button"]) {
+        padding-bottom: 0;
+        border-color: rgba($color-custom, 1);
+      }
+      & svg {
+        position: absolute;
+        right: -35px;
+        bottom: 5px;
+        transition: transform 0.35s;
+      }
+      &:hover svg {
+        transform: translateX(15px);
+      }
+    }
+  }
+  & .social {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include tablet-min {
+      align-items: center;
+    }
+    @include tablet-landscape-min {
+      width: 195px;
+      margin-left: 60px;
+      align-items: flex-start;
+      // text-align: left;
+    }
+    @include desktop-min {
+      margin-left: 278px;
+    }
+    &__title {
+      font-size: 1rem;//16px
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 34px;
+      margin-top: 34px;
+    }
+    &__list {
+      @include resetListStyles;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      @include tablet-landscape-min {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+    &__item:not(:last-of-type) {
+      margin-right: 25px;
+      @include tablet-landscape-min {
+        margin-right: inherit;
+      }
+    }
+    &__link {
+      @include resetLinkStyles;
+      & svg {
+        transition: transform 0.35s;
+      }
+      &:hover {
+        & svg {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+  & .options {
+    width: 100%;
+    margin-top: 34px;
+    @include tablet-landscape-min {
+      width: inherit;
+    }
+    &__list {
+      @include resetListStyles;
+      display: flex;
+      justify-content: flex-start;
+      @include tablet-min {
+        justify-content: center;
+      }
+    }
+    &__item {
+      position: relative;
+      &:not(:first-child) {
+        margin-left: 50px;
+      }
+    }
+    &__link {
+      @include resetLinkStyles;
+      font-family: $font-OpenSans;
+      color: $color-black;
+      &:hover {
+        // opacity: 0.5;
+        text-decoration: underline;
+      }
+    }
+  }
+  & .copyright {
+    width: 100%;
+    // padding: 0 15px;
+    margin-top: 50px;
+    font-family: $font-OpenSans;
+    color: $color-black;
+    &__list {
+      @include resetListStyles;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      @include tablet-min {
+        flex-direction: row;
+        justify-content: center;
+      }
+      @include tablet-landscape-min {
+        justify-content: flex-start;
+      }
+    }
+    &__item {
+      margin-right: 30px;
+      margin-bottom: 15px;
+    }
+    &__link {
+      @include resetLinkStyles;
+      border-bottom: 1px solid rgba($color-custom, 0);
+      transition: border-color 0.35s, padding 0.35s;
+      &:hover {
+        padding-bottom: 5px;
+        border-color: rgba($color-custom, 1);
+      }
+    }
+    &__text {
+      margin-top: 15px;
+      @include tablet-min {
+        margin-top: 70px;
+        text-align: center;
+      }
+    }
+  }
+}

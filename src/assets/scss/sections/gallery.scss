@@ -1,0 +1,136 @@
+.gallery {
+    padding: 30px 0;
+  @include desktop-min {
+    padding: 166px 0 81px;
+  }
+  &__title {
+    margin-bottom: 30px;
+    font-size: 2.1875rem;//35px
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: #2a2a2a;
+    @include tablet-landscape-min {
+      margin-bottom: 60px;
+    }
+    @include desktop-min {
+      margin-bottom: 114px;
+    }
+  }
+  &__list {
+    @include resetListStyles;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    grid-gap: 15px;
+    @include tablet-landscape-min {
+      grid-template-columns: auto auto;
+      grid-gap: 30px;
+    }
+    @include desktop-min {
+      justify-content: space-between;
+      grid-gap: 55px;
+    }
+  }
+}
+.arrivals {
+  max-width: 450px;
+  height: 620px;
+  margin: 0;
+  position: relative;
+  background-color: #907f5f;
+  cursor: pointer;
+  @include desktop-min {
+    max-width: 598px;
+    height: 824px;
+  }
+  &__image {
+    display: block;
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transition: border 0.35s, opacity 0.35s;
+  }
+  &__description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.35s;
+    &::before {
+      border-top: 4px solid $color-white;
+      border-bottom: 4px solid $color-white;
+      transform: scale(0,1);
+    }
+    &::after {
+      border-right: 4px solid $color-white;
+      border-left: 4px solid $color-white;
+      transform: scale(1,0);
+    }
+    &::before, &::after {
+      content: ' ';
+      position: absolute;
+      right: 39px;
+      left: 39px;
+      top: 39px;
+      bottom: 39px;
+      color: $color-white;
+      outline: none;
+      transition: opacity 0.35s, transform 0.35s;
+    }
+  }
+  &__title {
+    font-size: 2.625rem;//42px
+    font-weight: 700;
+    text-transform: capitalize;
+    color: $color-white;
+    z-index: 1;
+  }
+  &__text {
+    margin-bottom: 49px;
+    font-size: 1.25rem;//20px
+    text-transform: capitalize;
+    color: $color-white;
+    line-height: 2;
+    z-index: 1;
+  }
+  &__link {
+    max-width: 100px;
+    margin: 0 auto;
+    font-size: 1.25rem;//20px
+    color: $color-white;
+    z-index: 1;
+    transition: color 0.35s;
+    &:hover {
+      color: $color-custom;
+    }
+  }
+}
+//gradient border effects
+.gallery__item:nth-of-type(1) .arrivals__image, .gallery__item:nth-of-type(2) .arrivals__image {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to top, #ad9c8b 0%, #dacdbf 100%);
+  border-image-slice: 1;
+}
+.gallery__item:nth-of-type(3) .arrivals__image, .gallery__item:nth-of-type(4) .arrivals__image {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to top, #b3a282 0%, #dfc38f 100%);
+  border-image-slice: 1;
+}
+//hover effects
+.arrivals:hover .arrivals__image {
+  border: 2px solid #d6d4d0;
+  opacity: 0.2;
+}
+.arrivals:hover .arrivals__description {
+  opacity: 1;
+}
+.arrivals:hover .arrivals__description::before, .arrivals:hover .arrivals__description::after {
+  transform: scale(1);
+}

@@ -1,0 +1,89 @@
+.header {
+  position: relative;
+  padding: 50px 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;//need fixes
+  }
+  &__reference {
+    @include resetLinkStyles;
+    font-weight: 700;
+    margin-left: 51px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba($color-custom, 0);
+    transition: border-color 0.35s, padding 0.35s;
+    &:hover {
+      padding-bottom: 5px;
+      border-color: rgba($color-custom, 1);
+    }
+  }
+}
+.form {
+  position: relative;
+  width: 226px;
+  &__input {
+    padding: 0 0 17px 37px;
+    border: none;
+    border-bottom: 1px solid $color-custom;
+    font-family: $font-Lato;
+    font-size: 16px;
+    font-weight: 700;
+    color: $color-custom;
+    outline: none;
+    transition: border-color 0.35s;
+    &:focus {
+      border-color: rgba($color-custom, 0.1);
+    }
+    &::placeholder {
+      font-family: $font-Lato;
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-custom;
+      outline: none;
+      transition: color 0.35s;
+    }
+    &:focus::placeholder {
+      color: rgba($color-custom, 0.1);
+    }
+  }
+  &__button {
+    position: absolute;
+    padding: 0;
+    left: 0;
+    top: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.35s;
+    &:hover, &:focus {
+      transform: scale(1.2);
+    }
+  }
+}
+.menu {
+  margin-bottom: 1px;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  &__list {
+    @include resetListStyles;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__item:not(last-child) {
+      margin-right: 64px;
+    }
+  &__link {
+    @include resetLinkStyles;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}

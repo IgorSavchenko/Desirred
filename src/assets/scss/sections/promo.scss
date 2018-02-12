@@ -1,0 +1,45 @@
+.promo {
+  width: 100%;
+  margin-top: 15px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-khaki;
+  &__image {
+    display: block;
+    max-width: 50%;
+    min-height: 100%;
+    flex-grow: 2;
+    object-fit: cover;
+    @include tablet-landscape-min {
+      max-width: 100%;
+    }
+  }
+  &__info {
+    display: flex;
+    width: calc(100% - 502px);
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    color: $color-white;
+    text-align: center;
+  }
+  &__title {
+    font-size: 1.5rem;//24px
+    line-height: 1.2;
+    text-transform: uppercase;
+    @include tablet-min {
+      font-size: 1.6875rem;//27px
+    }
+  }
+  &__text {
+    margin-top: 43px;
+    font-size: 3rem;//48px
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    @include tablet-min {
+      font-size: 3.875rem;//62px
+    }
+  }
+}

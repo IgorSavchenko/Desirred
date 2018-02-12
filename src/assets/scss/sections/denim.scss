@@ -1,0 +1,36 @@
+.denim {
+  background: url("/assets/img/DenimCollection.jpg") center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  &__title {
+    padding: 50px 0 35px;
+    font-size: 3rem;//48px;
+    font-weight: 900;
+    color: $color-white;
+    text-shadow: 0 0 21px rgba(90, 59, 16, 0.44);
+    @include tablet-min {
+      padding-top: 100px;
+      font-size: 3.875rem;//62px;
+    }
+    @include desktop-min {
+      padding-top: 157px;
+    }
+  }
+  &__reference {
+    display: inline-block;
+    margin-bottom: 50px;
+    font-size: 1.25rem;//20px
+    font-weight: 700;
+    color: $color-white;
+    transition: color 0.35s;
+    @include tablet-min {
+      margin-bottom: 100px;
+    }
+    @include desktop-min {
+      margin-bottom: 197px;
+    }
+    &:hover {
+      color: $color-black;
+    }
+  }
+}

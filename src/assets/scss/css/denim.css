@@ -1,0 +1,14 @@
+.denim {
+  padding: 157px 0 197px;
+  background: url("/assets/img/-e-DENIM-LILY1.jpg") center center;
+  background-size: cover;
+  text-align: center;
+}
+
+.denim__title {
+  font-size: 3.875rem;
+  font-weight: 900;
+  text-shadow: 0 0 21px rgba(90, 59, 16, 0.44);
+}
+
+/*# sourceMappingURL=denim.css.map */
