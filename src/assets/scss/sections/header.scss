@@ -1,15 +1,11 @@
 .header {
+  //not responsive
   position: relative;
-  padding: 50px 15px 60px;
+  padding: 0 15px;
   display: flex;
   justify-content: space-between;
-  &__logo {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;//need fixes
+  & aside {
+    margin-top: 50px;
   }
   &__reference {
     @include resetLinkStyles;
@@ -27,6 +23,7 @@
 .form {
   position: relative;
   width: 226px;
+  margin-top: 50px;
   &__input {
     padding: 0 0 17px 37px;
     border: none;
