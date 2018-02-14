@@ -1,7 +1,7 @@
 .gallery {
-    padding: 30px 0;
+    padding: 30px 15px;
   @include desktop-min {
-    padding: 166px 0 81px;
+    padding: 166px 15px 81px;
   }
   &__title {
     margin-bottom: 30px;
@@ -34,12 +34,16 @@
   }
 }
 .arrivals {
-  max-width: 450px;
-  height: 620px;
+  max-width: 350px;
+  height: 480px;
   margin: 0;
   position: relative;
   background-color: #907f5f;
   cursor: pointer;
+  @include tablet-min {
+    max-width: 450px;
+    height: 620px;
+  }
   @include desktop-min {
     max-width: 598px;
     height: 824px;

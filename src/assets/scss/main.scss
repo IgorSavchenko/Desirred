@@ -18,8 +18,9 @@ $font-OpenSans: 'Open Sans', sans-serif;
 }
 //fonts
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Open+Sans');
-//helper
+//helpers
 @import "helpers/media-queries";
+@import "helpers/slick";
 // sections
 @import "sections/header";
 @import "sections/denim";
@@ -28,8 +29,6 @@ $font-OpenSans: 'Open Sans', sans-serif;
 @import "sections/gallery";
 @import "sections/subscribe";
 @import "sections/footer";
-// blocks
-// @import "blocks/box";
 //==============================================================================
 //common styles
 * {

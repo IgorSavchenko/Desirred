@@ -1,15 +1,21 @@
 .brands {
-  padding: 30px 0 100px;
+  padding: 30px 15px;
   position: relative;
+  @include tablet-landscape-min {
+    padding: 60px 15px 0;
+  }
   @include desktop-min {
-    padding: 123px 0 0;
+    padding: 123px 15px 0;
   }
   &__title {
-    margin-bottom: 15px;
+    margin-bottom: 90px;
     font-size: 2.1875rem;//35px
     font-weight: 700;
     text-align: center;
     color: #2a2a2a;
+    @include tablet-min {
+      margin-bottom: 45px;
+    }
     @include tablet-landscape-min {
       margin-bottom: 40px;
     }
@@ -19,7 +25,7 @@
   }
   &__reference {
     position: absolute;
-    bottom: 0;
+    top: 90px;
     right: 50%;
     padding: 0;
     font-size: 1.25rem;//20px
@@ -30,8 +36,12 @@
     border-bottom: 2px solid rgba($color-black,1);
     transform: translateX(50%);
     transition: padding 0.35s, border-color 0.35s;
+    @include tablet-min {
+      top: 35px;
+      right: 10%;
+    }
     @include tablet-landscape-min {
-      top: 30px;
+      top: 70px;
       right: 60px;
       bottom: inherit;
     }
@@ -70,35 +80,69 @@
   &__list {
     @include resetListStyles;
     display: flex;
-    flex-direction: column;
+    // flex-wrap: wrap;
+    // flex-direction: column;
     justify-content: center;
     align-items: center;
     @include tablet-min {
-      flex-direction: row;
+      // flex-direction: row;
+    }
+    @include tablet-landscape-min {
+      // flex-wrap: nowrap;
     }
   }
   &__item {
-    margin: 20px;
+      margin: 0 45px;
+      height: 430px;
+    @include tablet-landscape-min {
+      margin: 20px;
+    }
   }
   &__link {
     @include resetLinkStyles;
     display: block;
     max-width: 256px;
-    height: 360px;
+    // height: 360px;
+    height: auto;
+    margin: auto;
   }
-  &__button {
+  & button {
     position: absolute;
-    top: 419px;
+    top: 320px;
+    border: none;
+    background: transparent;
+    outline: none;
     cursor: pointer;
-    transition: opacity 0.35s;
-    &-left {
-      left: 0;
+    @include tablet-min {
+      top: 280px;
     }
-    &-right {
-      right: 0;
+    @include tablet-landscape-min {
+      top: 300px;
+    }
+    @include desktop-min {
+      top: 419px;
+    }
+    transition: opacity 0.35s;
+    &.slick-next {
+      right: 20px;
+      @include tablet-min {
+        right: 10px;
+      }
+      @include tablet-landscape-min {
+        right: 0;
+      }
+    }
+    &.slick-prev {
+      left: 20px;
+      @include tablet-min {
+        left: 10px;
+      }
+      @include tablet-landscape-min {
+        left: 0;
+      }
     }
     &:hover {
-      opacity: 0.5;;
+      opacity: 0.5;
     }
   }
 }
@@ -108,7 +152,7 @@
   &__image {
     display: block;
     max-width: 100%;
-    min-height: 100%;
+    height: auto;
     transition: box-shadow 0.35s, filter 0.35s;
   }
   &__description {

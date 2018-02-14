@@ -10,10 +10,12 @@
   &__reference {
     @include resetLinkStyles;
     font-weight: 700;
-    margin-left: 51px;
     padding-bottom: 12px;
     border-bottom: 2px solid rgba($color-custom, 0);
     transition: border-color 0.35s, padding 0.35s;
+    &:not(:first-child) {
+      margin-left: 51px;
+    }
     &:hover {
       padding-bottom: 5px;
       border-color: rgba($color-custom, 1);
