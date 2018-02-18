@@ -44,8 +44,9 @@ body {
   font-size: 16px;
   line-height: 1;
   color: $color-custom;
+  overflow-x: hidden;
 }
 .container {
-  max-width: 1315px;
+  max-width: 1345px;
   margin: 0 auto;
 }

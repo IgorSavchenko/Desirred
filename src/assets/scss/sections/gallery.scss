@@ -1,10 +1,11 @@
 .gallery {
     padding: 30px 15px;
   @include desktop-min {
-    padding: 166px 15px 81px;
+    padding: 157px 15px 80px;
   }
   &__title {
     margin-bottom: 30px;
+    margin-left: -10px;
     font-size: 2.1875rem;//35px
     font-weight: 700;
     text-align: center;
@@ -14,7 +15,7 @@
       margin-bottom: 60px;
     }
     @include desktop-min {
-      margin-bottom: 114px;
+      margin-bottom: 110px;
     }
   }
   &__list {
@@ -23,24 +24,29 @@
     grid-template-columns: auto;
     justify-content: center;
     grid-gap: 15px;
-    @include tablet-landscape-min {
+    @include tablet-min {
       grid-template-columns: auto auto;
       grid-gap: 30px;
     }
     @include desktop-min {
       justify-content: space-between;
-      grid-gap: 55px;
+      grid-row-gap: 113px;
+      grid-column-gap: 116px;
     }
   }
 }
 .arrivals {
-  max-width: 350px;
-  height: 480px;
+  max-width: 400px;
+  height: 550px;
   margin: 0;
   position: relative;
   background-color: #907f5f;
   cursor: pointer;
   @include tablet-min {
+    max-width: 350px;
+    height: 480px;
+  }
+  @include tablet-landscape-min {
     max-width: 450px;
     height: 620px;
   }
@@ -97,7 +103,7 @@
     z-index: 1;
   }
   &__text {
-    margin-bottom: 49px;
+    margin-bottom: 30px;
     font-size: 1.25rem;//20px
     text-transform: capitalize;
     color: $color-white;

@@ -1,38 +1,60 @@
 .header {
-  //not responsive
   position: relative;
-  padding: 0 15px;
-  display: flex;
-  justify-content: space-between;
+  padding: 0;
+  & .container {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+  }
   & aside {
-    margin-top: 50px;
+    margin-top: 49px;
+    display: none;
+    @include tablet-min {
+      display: block;
+    }
   }
   &__reference {
     @include resetLinkStyles;
-    font-weight: 700;
     padding-bottom: 12px;
-    border-bottom: 2px solid rgba($color-custom, 0);
+    border-bottom: 1px solid rgba($color-custom, 0);
     transition: border-color 0.35s, padding 0.35s;
     &:not(:first-child) {
-      margin-left: 51px;
+      margin-left: 24px;
+      @include tablet-landscape-min {
+        margin-left: 47px;
+      }
     }
     &:hover {
       padding-bottom: 5px;
       border-color: rgba($color-custom, 1);
     }
   }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    & svg {
+      width: 200px;
+      @include tablet-min {
+        width: 250px;
+      }
+    }
+  }
 }
 .form {
   position: relative;
-  width: 226px;
-  margin-top: 50px;
+  width: 228px;
+  margin-top: 46px;
+  display: none;
+  @include tablet-min {
+    display: block;
+  }
   &__input {
-    padding: 0 0 17px 37px;
+    width: 100%;
+    padding: 0 0 15px 37px;
     border: none;
     border-bottom: 1px solid $color-custom;
     font-family: $font-Lato;
     font-size: 16px;
-    font-weight: 700;
     color: $color-custom;
     outline: none;
     transition: border-color 0.35s;
@@ -42,7 +64,6 @@
     &::placeholder {
       font-family: $font-Lato;
       font-size: 16px;
-      font-weight: 700;
       color: $color-custom;
       outline: none;
       transition: color 0.35s;
@@ -66,23 +87,206 @@
     }
   }
 }
-.menu {
-  margin-bottom: 1px;
-  border-top: 1px solid #e2e2e2;
-  border-bottom: 1px solid #e2e2e2;
+.navigation {
+  &__menu {
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    visibility: hidden;
+    max-height: 0;
+    &.active {
+      visibility: visible;
+      max-height: 100%;
+    }
+    @include tablet-min {
+      visibility: visible;
+      max-height: 100%;
+    }
+  }
   &__list {
     @include resetListStyles;
-    height: 65px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  &__item:not(last-child) {
-      margin-right: 64px;
+    flex-direction: column;
+    font-size: 1.25rem;//20px
+    @include tablet-min {
+      height: 65px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;//16px
     }
+  }
+  &__item {
+    padding: 10px 15px;
+    @include tablet-min {
+      padding: 0;
+    }
+    &:hover {
+      background-color: #e2e2e2;
+      @include tablet-min {
+        background-color: transparent;
+      }
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid #e2e2e2;
+      @include tablet-min {
+        margin-right: 63px;
+        border: none;
+      }
+    }
+  }
   &__link {
     @include resetLinkStyles;
     text-transform: uppercase;
-    font-weight: 700;
+    display: block;
+    &:hover, &.active {
+      font-weight: 700;
+    }
+    @include tablet-min {
+      display: inline-block;
+    }
+  }
+}
+.main__menu {
+  position: relative;
+  display: none;
+  // show only on tablet or desktop
+  @include tablet-min {
+    display: block;
+  }
+  &__list {
+    @include resetListStyles;
+  }
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background-color: $color-white;
+    padding-bottom: 30px;
+    &.visible {
+      display: block;
+    }
+    & .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      @include tablet-landscape-min {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+      }
+    }
+    &__brands {
+      @include resetListStyles;
+      width: 100%;
+      padding-top: 53px;
+      margin: 0 auto;
+      column-count: 4;
+      column-gap: 45px;
+      @include tablet-landscape-min {
+        width: inherit;
+        column-count: 3;
+      }
+      @include desktop-min {
+        margin: 0;
+        column-gap: 60px;
+      }
+    }
+    &__brand {
+      margin-bottom: 15px;
+      & a {
+        @include resetLinkStyles;
+        font-size: 1.125rem;//18px
+        color: #323232;
+        &:hover {
+          text-decoration: underline;
+        }
+        @include tablet-landscape-min {
+          font-size: 1.375rem;//22px
+        }
+      }
+    }
+    &__poster {
+      &:not(:first-of-type) {
+        margin-left: 10px;
+      }
+      & a {
+        display: block;
+        max-width: 350px;
+        height: 210px;
+      }
+      & img {
+        display: block;
+        max-width: 100%;
+        height: 100%;
+        transition: opacity 0.35s;
+        object-fit: cover;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+    &__title {
+      padding: 25px 0;
+      font-size: 1.375rem;//22px
+      text-transform: uppercase;
+      color: #323232;
+    }
+  }
+}
+.burger {
+  position: relative;
+  right: 15px;
+  top: 35px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  @include tablet-min {
+    display: none;
+  }
+  &__menu {
+    position: absolute;
+    background: rgba($color-custom,1);
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    right: 0px;
+    margin-top: -2px;
+    opacity: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      background: rgba($color-custom,1);
+      display: block;
+      width: 100%;
+      height: 2px;
+      top: 12px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background: rgba($color-custom,1);
+      display: block;
+      width: 100%;
+      height: 2px;
+      bottom: 12px;
+    }
+    &, &::after, &::before {
+      transition: all 0.35s ease-in-out;
+    }
+  }
+  &.active &__menu::after{
+    transform: rotate(-45deg);
+    bottom: 0px;
+  }
+  &.active &__menu::before{
+    transform: rotate(45deg);
+    top: 0px;
+  }
+  &.active &__menu{
+    background: rgba($color-custom,0);
   }
 }

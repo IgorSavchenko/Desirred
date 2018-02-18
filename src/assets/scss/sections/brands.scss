@@ -5,7 +5,7 @@
     padding: 60px 15px 0;
   }
   @include desktop-min {
-    padding: 123px 15px 0;
+    padding: 118px 15px 0;
   }
   &__title {
     margin-bottom: 90px;
@@ -20,7 +20,7 @@
       margin-bottom: 40px;
     }
     @include desktop-min {
-      margin-bottom: 95px;
+      margin-bottom: 110px;
     }
   }
   &__reference {
@@ -46,8 +46,8 @@
       bottom: inherit;
     }
     @include desktop-min {
-      right: 38px;
-      top: 135px;
+      right: 55px;
+      top: 128px;
     }
     &:hover {
       padding: 5px 7px;
@@ -80,31 +80,24 @@
   &__list {
     @include resetListStyles;
     display: flex;
-    // flex-wrap: wrap;
-    // flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include tablet-min {
-      // flex-direction: row;
-    }
     @include tablet-landscape-min {
-      // flex-wrap: nowrap;
+      max-width: 1174px;
+      margin: 0 auto;
     }
   }
   &__item {
-      margin: 0 45px;
       height: 430px;
-    @include tablet-landscape-min {
-      margin: 20px;
-    }
+      outline: none;
   }
   &__link {
     @include resetLinkStyles;
     display: block;
     max-width: 256px;
-    // height: 360px;
     height: auto;
     margin: auto;
+    outline: none;
   }
   & button {
     position: absolute;
@@ -129,7 +122,7 @@
         right: 10px;
       }
       @include tablet-landscape-min {
-        right: 0;
+        right: 15px;
       }
     }
     &.slick-prev {
@@ -138,7 +131,7 @@
         left: 10px;
       }
       @include tablet-landscape-min {
-        left: 0;
+        left: 10px;
       }
     }
     &:hover {
@@ -171,7 +164,7 @@
     bottom: -72px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.5625;//25px
+    font-size: 1.5625rem;//25px
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;

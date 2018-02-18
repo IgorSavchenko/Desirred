@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "denim.css",
-	"sources": [
-		"../sections/denim.scss"
-	],
-	"names": [],
-	"mappings": "AAAA,AAAA,MAAM,CAAC;EACL,OAAO,EAAE,aAAa;EACtB,UAAU,EAAE,qCAAqC,CAAC,MAAM,CAAC,MAAM;EAC/D,eAAe,EAAE,KAAK;EACtB,UAAU,EAAE,MAAM;CAMnB;;AALC,AAAA,aAAQ,CAAC;EACP,SAAS,EAAE,QAAQ;EACnB,WAAW,EAAE,GAAG;EAChB,WAAW,EAAE,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,sBAAsB;CAC7C"
-}

@@ -1,37 +1,38 @@
 .footer {
   padding: 0 15px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  @include tablet-min {
-    padding-top: 40px;
-  }
-  @include tablet-landscape-min {
-    justify-content: space-between;
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include tablet-min {
+      padding-top: 33px;
+    }
+    @include tablet-landscape-min {
+      justify-content: space-between;
+    }
+    @include desktop-min {
+      flex-wrap: nowrap;
+    }
   }
   & .about, & .services, & .stores {
     width: 100%;
-    // margin: 0 auto;
     display: flex;
     flex-direction: column;
     @include tablet-min {
       width: inherit;
     }
-    @include tablet-landscape-min {
-      width: inherit;
-    }
     &:not(:nth-of-type(3)) {
       margin-right: 25px;
       @include tablet-min {
-        margin-right: 60px;
+        margin-right: 55px;
       }
     }
     &__title {
       font-size: 1rem;//16px
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: 34px;
       margin-top: 34px;
+      margin-bottom: 23px;
     }
     &__list {
       @include resetListStyles;
@@ -75,17 +76,17 @@
       width: 195px;
       margin-left: 60px;
       align-items: flex-start;
-      // text-align: left;
     }
     @include desktop-min {
-      margin-left: 278px;
+      margin-left: 275px;
+      margin-right: 166px;
     }
     &__title {
       font-size: 1rem;//16px
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: 34px;
       margin-top: 34px;
+      margin-bottom: 27px;
     }
     &__list {
       @include resetListStyles;
@@ -100,7 +101,7 @@
     &__item:not(:last-of-type) {
       margin-right: 25px;
       @include tablet-landscape-min {
-        margin-right: inherit;
+        // margin-right: inherit;
       }
     }
     &__link {
@@ -117,7 +118,8 @@
   }
   & .options {
     width: 100%;
-    margin-top: 34px;
+    margin-top: 38px;
+    // margin-left: 10px;
     @include tablet-landscape-min {
       width: inherit;
     }
@@ -132,7 +134,7 @@
     &__item {
       position: relative;
       &:not(:first-child) {
-        margin-left: 50px;
+        margin-left: 60px;
       }
     }
     &__link {
@@ -140,15 +142,13 @@
       font-family: $font-OpenSans;
       color: $color-black;
       &:hover {
-        // opacity: 0.5;
         text-decoration: underline;
       }
     }
   }
   & .copyright {
     width: 100%;
-    // padding: 0 15px;
-    margin-top: 50px;
+    margin-top: 52px;
     font-family: $font-OpenSans;
     color: $color-black;
     &__list {
@@ -167,9 +167,13 @@
     &__item {
       margin-right: 30px;
       margin-bottom: 15px;
+      @include tablet-landscape-min {
+        margin-bottom: 0;
+      }
     }
     &__link {
       @include resetLinkStyles;
+      font-weight: 700;
       border-bottom: 1px solid rgba($color-custom, 0);
       transition: border-color 0.35s, padding 0.35s;
       &:hover {
@@ -179,9 +183,11 @@
     }
     &__text {
       margin-top: 15px;
+      font-weight: 700;
       @include tablet-min {
         margin-top: 70px;
         text-align: center;
+        margin-left: -12px;
       }
     }
   }
