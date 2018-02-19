@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(window).on("load", function(){
 
   // initialize slick slider
   $(".slick").slick({
